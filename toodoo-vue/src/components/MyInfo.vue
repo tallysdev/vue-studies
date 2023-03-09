@@ -1,5 +1,8 @@
 <template lang="">
     <div>
+        <p v-if="Work"> Está trabalhando</p>
+        <p v-else> Não está trabalhando</p>
+        <p v-show="email">tallysdev</p>
         <ul>
             <li>
                 teste    
@@ -30,7 +33,8 @@ export default {
     },
     data() {
         return {
-        
+            Work : false,
+            email: true,
         }
     },    
 }

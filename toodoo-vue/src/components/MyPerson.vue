@@ -13,7 +13,7 @@ export default {
 
     name: 'MyPerson',
     components: {
-        MyInfo,
+        MyInfo, 
     },
     data() {
         return {
