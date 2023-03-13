@@ -6,18 +6,14 @@
         <p v-else> Não está trabalhando</p>
         <p v-show="email">tallysdev@gmail.com</p>
         <p>Para acessar o meu <a href="github" target="_blank">github</a> basta clicar aqui</p>
+        <p>backend</p>
         <ul>
-            <li>
-                teste    
-            </li>
-
-            <li>
-                teste 2
-            </li>
-
-            <li>
-                teste 3
-            </li>   
+            <li v-for="(tecnology, index) in backend_tecnologies" v-bind:key="index">{{tecnology}}</li>
+        </ul>
+        <p>frontend</p>
+        <ul>
+            <li  v-for="tecnology in frontend_tecnologies" :key="tecnology.id">
+                {{tecnology.language}}</li>
         </ul>
 
         <MyForm/>
@@ -43,6 +39,12 @@ export default {
             email: false,
             github: "www.github.com/Tallys-Aureliano",
             textoB: "Mostrar Email",
+            backend_tecnologies: ["TypeScript","NodeJS","NestJS","ExpressJS"],
+            frontend_tecnologies: [
+                {id: 1, language: "JavaScript" },
+                {id: 2, language: "HTML" },
+                {id: 3, language: "CSS" },
+            ]
         }
     },
     methods: {
