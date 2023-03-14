@@ -4,7 +4,7 @@
         <p class="paragrafo-pai">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque fugit dolore officiis illo, placeat doloribus laborum, voluptatem magni ullam odio repellat animi nemo? Totam rem quo rerum quia facere illo?</p>
         <p v-if="Work"> Está trabalhando</p>
         <p v-else> Não está trabalhando</p>
-        <p v-show="email">tallysdev@gmail.com</p>
+        <p v-show="email">{{compEmail}}</p>
         <p>Para acessar o meu <a href="github" target="_blank">github</a> basta clicar aqui</p>
         <p>backend</p>
         <ul>
@@ -32,6 +32,9 @@ export default {
     components: {
         MyForm,
         MyPicture,
+    },
+    props: {
+        compEmail: String 
     },
     data() {
         return {

@@ -4,6 +4,7 @@
         <li><a href="#">op 1</a></li>
         <li><a href="#">op 2</a></li>
         <li><a href="#">op 2</a></li>
+        <li v-if="logado"><a href="www.github/Tallys-Aureliano">My github</a></li>
     </ul>
 
 </template>
@@ -11,6 +12,7 @@
 <script>
 export default {
     name: "MyHeader",
+    props: ["logado"],
     data() {
         return {
 
