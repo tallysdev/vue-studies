@@ -1,5 +1,5 @@
 <template lang="">
-  <MyHeader/>
+  <MyHeader :logado="true"/>
 
   <div>
     <h1>Tallys</h1>
