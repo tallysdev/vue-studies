@@ -1,6 +1,8 @@
 <template>
-    <div>
-        <h1>Home</h1>
+    <p>banner</p>
+    <div class="main-container">
+        <h1>Monte o seu Burger</h1>
+        <p>Formulario</p>
     </div>
 </template>
 <script>
