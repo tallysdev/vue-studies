@@ -1,5 +1,6 @@
 <template>
     <div id="burger-table">
+        <MyMensage :msg="msg" v-show="msg"/>
         <div>
             <div id="burger-table-heading">
                 <div class="order-id">#</div>
@@ -35,13 +36,18 @@
 </template>
 
 <script>
+import MyMensage from './MyMensage.vue';
 export default {
     name: "MyDeshboard",
+    components: {
+        MyMensage,
+    },
     data() {
         return {
             burgers: null,
             burgers_id: null,
-            status: []
+            status: [],
+            msg: null,
         }
     },
     methods: {
@@ -67,10 +73,13 @@ export default {
             const req = await fetch(`http://localhost:3000/burgers/${id}`, { method: "DELETE"
         });
 
-        // eslint-disable-next-line no-unused-vars
-        const res = await req.json();
+            // eslint-disable-next-line no-unused-vars
+            const res = await req.json();
 
-        this.getPedidos();
+            this.msg = `Pedido Removido com Sucesso.`;
+            setTimeout(() => this.msg = "", 3000)
+
+            this.getPedidos();
 
         },
         async updateBurger (event, id) {
@@ -86,6 +95,8 @@ export default {
 
             const res = await req.json();
             console.log(res);
+            this.msg = `Pedido Nº ${res.id} foi atualizado para ${res.status} com sucesso.`;
+            setTimeout(() => this.msg = "", 3000)
             }
 
     },
